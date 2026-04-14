@@ -1,0 +1,17 @@
+tap "homebrew/services"
+
+# Core
+brew "git"
+brew "gh"
+brew "tmux"
+brew "ssh-copy-id"
+
+# Java / Kotlin backend
+brew "openjdk@21"
+brew "gradle"
+
+# Media server
+brew "ffmpeg"
+
+# DB
+brew "postgresql@14", restart_service: :changed

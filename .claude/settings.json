@@ -1,0 +1,193 @@
+{
+  "attribution": {
+    "commit": "",
+    "pr": ""
+  },
+  "permissions": {
+    "allow": [
+      "Bash(ls *)",
+      "Bash(cat *)",
+      "Bash(head *)",
+      "Bash(tail *)",
+      "Bash(find *)",
+      "Bash(grep *)",
+      "Bash(rg *)",
+      "Bash(wc *)",
+      "Bash(file *)",
+      "Bash(stat *)",
+      "Bash(du *)",
+      "Bash(df *)",
+      "Bash(pwd)",
+      "Bash(which *)",
+      "Bash(where *)",
+      "Bash(whoami)",
+      "Bash(env)",
+      "Bash(printenv *)",
+      "Bash(tree *)",
+      "Bash(git status*)",
+      "Bash(git log*)",
+      "Bash(git diff*)",
+      "Bash(git branch*)",
+      "Bash(git show*)",
+      "Bash(git remote*)",
+      "Bash(git tag*)",
+      "Bash(java *)",
+      "Bash(javac *)",
+      "Bash(kotlin *)",
+      "Bash(kotlinc *)",
+      "Bash(gradle *)",
+      "Bash(./gradlew *)",
+      "Bash(gradlew *)",
+      "Bash(mvn *)",
+      "Bash(./mvnw *)",
+      "Bash(python3 *)",
+      "Bash(python *)",
+      "Bash(pip *)",
+      "Bash(pip3 *)",
+      "Bash(pip install *)",
+      "Bash(pip3 install *)",
+      "Bash(node *)",
+      "Bash(npm *)",
+      "Bash(npx *)",
+      "Bash(yarn *)",
+      "Bash(pnpm *)",
+      "Bash(bun *)",
+      "Bash(bunx *)",
+      "Bash(ts-node *)",
+      "Bash(tsx *)",
+      "Bash(uvicorn *)",
+      "Bash(gunicorn *)",
+      "Bash(flask *)",
+      "Bash(django-admin *)",
+      "Bash(manage.py *)",
+      "Bash(./manage.py *)",
+      "Bash(cargo *)",
+      "Bash(go *)",
+      "Bash(swift *)",
+      "Bash(docker *)",
+      "Bash(docker-compose *)",
+      "Bash(curl *)",
+      "Bash(wget *)",
+      "Bash(http *)",
+      "Bash(brew *)",
+      "Bash(date *)",
+      "Bash(TZ=*)",
+      "Bash(lsof *)",
+      "Bash(kill *)",
+      "Bash(pkill *)",
+      "Bash(xargs *)",
+      "Bash(fuser *)",
+      "Bash(ps *)",
+      "Bash(top *)",
+      "Bash(htop *)",
+      "Bash(netstat *)",
+      "Bash(ss *)",
+      "Bash(sleep *)",
+      "Bash(echo *)",
+      "Bash(mkdir *)",
+      "Bash(cp *)",
+      "Bash(mv *)",
+      "Bash(touch *)",
+      "Bash(chmod *)",
+      "Bash(tar *)",
+      "Bash(unzip *)",
+      "Bash(cd *)",
+      "Bash(export *)",
+      "Bash(source *)",
+      "Bash(. *)",
+      "Bash(open *)",
+      "Bash(pbcopy *)",
+      "Bash(pbpaste *)",
+      "Bash(subl *)",
+      "Bash(./gradlew *&)",
+      "Bash(./gradlew * &)",
+      "Bash(gh *)",
+      "Bash(gh pr *)",
+      "Bash(gh issue *)",
+      "Bash(gh repo *)",
+      "Bash(gh api *)",
+      "Bash(gh auth *)"
+    ],
+    "allowMultilineCommands": true
+  },
+  "hooks": {
+    "PostToolUse": [
+      {
+        "matcher": "Write|Edit|MultiEdit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "/Users/taxistsamael/.claude/hooks/git-auto-stage.sh"
+          }
+        ]
+      },
+      {
+        "matcher": "ExitPlanMode",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "/Users/taxistsamael/.claude/hooks/save-plan.sh"
+          }
+        ]
+      },
+      {
+        "matcher": "Bash",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "/Users/taxistsamael/.claude/hooks/open-pdf-after-typst.sh"
+          }
+        ]
+      }
+    ]
+  },
+  "statusLine": {
+    "type": "command",
+    "command": "bash -c 'plugin_dir=$(ls -d \"${CLAUDE_CONFIG_DIR:-$HOME/.claude}\"/plugins/cache/claude-hud/claude-hud/*/ 2>/dev/null | awk -F/ '\"'\"'{ print $(NF-1) \"\\t\" $(0) }'\"'\"' | sort -t. -k1,1n -k2,2n -k3,3n -k4,4n | tail -1 | cut -f2-); exec \"/Users/taxistsamael/.nvm/versions/node/v20.20.0/bin/node\" \"${plugin_dir}dist/index.js\"'"
+  },
+  "enabledPlugins": {
+    "swift-lsp@claude-plugins-official": false,
+    "claude-md-management@claude-plugins-official": true,
+    "hookify@claude-plugins-official": true,
+    "ksrc@respawn-tools": true,
+    "claude-code-setup@claude-plugins-official": true,
+    "skill-creator@claude-plugins-official": true,
+    "firebase@firebase": false,
+    "superpowers@claude-plugins-official": true,
+    "claude-hud@claude-hud": true
+  },
+  "extraKnownMarketplaces": {
+    "respawn-tools": {
+      "source": {
+        "source": "github",
+        "repo": "respawn-app/claude-plugin-marketplace"
+      }
+    },
+    "firebase": {
+      "source": {
+        "source": "github",
+        "repo": "firebase/firebase-tools"
+      }
+    },
+    "claude-hud": {
+      "source": {
+        "source": "github",
+        "repo": "jarrodwatts/claude-hud"
+      }
+    },
+    "ukrainian-sergeant-market": {
+      "source": {
+        "source": "github",
+        "repo": "satanyakiv/claude-4.5.0"
+      }
+    }
+  },
+  "language": "Ukrainian",
+  "effortLevel": "high",
+  "voiceEnabled": true,
+  "voice": {
+    "enabled": true,
+    "mode": "hold"
+  },
+  "skipDangerousModePermissionPrompt": true
+}

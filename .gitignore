@@ -1,0 +1,23 @@
+# .claude - keep only config, ignore runtime data
+.claude/backups/
+.claude/cache/
+.claude/chrome/
+.claude/debug/
+.claude/downloads/
+.claude/file-history/
+.claude/history.jsonl
+.claude/ide/
+.claude/mcp-needs-auth-cache.json
+.claude/paste-cache/
+.claude/plans/
+.claude/session-env/
+.claude/sessions/
+.claude/shell-snapshots/
+.claude/stats-cache.json
+.claude/statusline-command.sh
+.claude/tasks/
+.claude/telemetry/
+.claude/todos/
+.claude/projects/
+.claude/settings.local.json
+.claude/ukrainian-sergeant-state.json
