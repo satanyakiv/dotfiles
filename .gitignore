@@ -21,3 +21,13 @@
 .claude/projects/
 .claude/settings.local.json
 .claude/ukrainian-sergeant-state.json
+
+# Worktrees (per-machine, not synced)
+.claude/worktrees/
+
+# Secrets (never commit)
+secrets/
+
+# macOS junk
+.DS_Store
+**/.DS_Store

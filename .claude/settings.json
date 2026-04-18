@@ -117,7 +117,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "/Users/taxistsamael/.claude/hooks/git-auto-stage.sh"
+            "command": "bash -c 'exec \"${CLAUDE_CONFIG_DIR:-$HOME/.claude}/hooks/git-auto-stage.sh\"'"
           }
         ]
       },
@@ -126,7 +126,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "/Users/taxistsamael/.claude/hooks/save-plan.sh"
+            "command": "bash -c 'exec \"${CLAUDE_CONFIG_DIR:-$HOME/.claude}/hooks/save-plan.sh\"'"
           }
         ]
       },
@@ -135,7 +135,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "/Users/taxistsamael/.claude/hooks/open-pdf-after-typst.sh"
+            "command": "bash -c 'exec \"${CLAUDE_CONFIG_DIR:-$HOME/.claude}/hooks/open-pdf-after-typst.sh\"'"
           }
         ]
       }
@@ -143,7 +143,7 @@
   },
   "statusLine": {
     "type": "command",
-    "command": "bash -c 'plugin_dir=$(ls -d \"${CLAUDE_CONFIG_DIR:-$HOME/.claude}\"/plugins/cache/claude-hud/claude-hud/*/ 2>/dev/null | awk -F/ '\"'\"'{ print $(NF-1) \"\\t\" $(0) }'\"'\"' | sort -t. -k1,1n -k2,2n -k3,3n -k4,4n | tail -1 | cut -f2-); exec \"/Users/taxistsamael/.nvm/versions/node/v20.20.0/bin/node\" \"${plugin_dir}dist/index.js\"'"
+    "command": "bash -lc 'plugin_dir=$(ls -d \"${CLAUDE_CONFIG_DIR:-$HOME/.claude}\"/plugins/cache/claude-hud/claude-hud/*/ 2>/dev/null | awk -F/ '\"'\"'{ print $(NF-1) \"\\t\" $(0) }'\"'\"' | sort -t. -k1,1n -k2,2n -k3,3n -k4,4n | tail -1 | cut -f2-); node_bin=$(command -v node || ls -t \"$HOME\"/.nvm/versions/node/*/bin/node 2>/dev/null | head -1 || echo /usr/local/bin/node); exec \"$node_bin\" \"${plugin_dir}dist/index.js\"'"
   },
   "enabledPlugins": {
     "swift-lsp@claude-plugins-official": false,
