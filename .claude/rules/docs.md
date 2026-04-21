@@ -24,6 +24,61 @@ Every doc follows this skeleton in order:
 ## Related                        — bullet links to other docs/plans
 ````
 
+## Research-doc skeleton
+
+For `*_RESEARCH.md` files (backend/API integration research, vendor-surface audits) use this stricter skeleton. The skeleton is the contract — agents generating new research from Postman / OpenAPI / vendor docs copy this block and fill in values. Sections may be omitted when not applicable; section order is fixed.
+
+```markdown
+# <Feature> Research
+
+One-liner about scope. Source of data: <Postman collection name / vendor dev-guide URL / NotebookLM notebook id>.
+
+## Known constants
+
+- Hardcoded values, each tagged with "hardcoded server-side" or "env-specific".
+
+## Headline finding
+
+One bold statement: who owns what, what's in scope for v1, the single most important gate.
+
+## Coverage matrix
+
+| Internal endpoint | Vendor / other source | Owner | Notes |
+| ----------------- | --------------------- | ----- | ----- |
+
+## <Per-flow sections>
+
+Tables, nesting, JSON shapes only from verified sources. No walls of code, no pseudo-code, no hypothetical snippets.
+
+## PII / data-retention notes
+
+Only if applicable.
+
+## Implementation backlog
+
+| # | Work item | Notes |
+| - | --------- | ----- |
+
+## Not Covered (and why)
+
+**<Bold term>** — reason why excluded.
+
+## Related
+
+- 3–5 links max.
+```
+
+## PDFs
+
+Do not commit `.pdf` files to `docs/` if they duplicate an existing `.md`. Markdown is the source — render PDFs on demand. Exceptions (external artifacts with no MD equivalent: design exports, signed contracts) go in `docs/attachments/`.
+
+## Raw research inputs
+
+Folders like `docs/toast-api/postman/`, `docs/openapi/`, etc. hold raw input for research agents (Postman collections, OpenAPI dumps, vendor specs). Rules:
+
+- Git-track only when the collection is stable and needed for reproducibility. Otherwise `.gitignore` or keep outside the repo.
+- Do not reference raw-input filenames from inside committed research docs as "source of truth" — the research doc is the source of truth; the raw input is just how the agent got there.
+
 ## Formatting Conventions
 
 **Tables** — pipe-separated, left-aligned, dashes separator:
